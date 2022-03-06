@@ -1,7 +1,5 @@
 export function qs(selector, scope = document) {
   if (!selector) throw 'no selector';
-  console.log(scope);
-  console.log(scope.querySelector(selector));
   return scope.querySelector(selector);
 }
 
