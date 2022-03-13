@@ -10,7 +10,7 @@ function main() {
 
   const views = {
     // TODO
-    SerachFormView: new SerachFormView(),
+    searchFormView: new SerachFormView(),
   };
 
   new Controller(store, views);
