@@ -1,4 +1,4 @@
-import { qs, on, emit } from '../helpers.js';
+import { qs, on } from '../helpers.js';
 import View from './View.js';
 
 const tag = '[SearchFormView]';
@@ -20,7 +20,7 @@ export default class SerachFormView extends View {
 
   bindEvent() {
     on(this.inputElement, 'keyup', () => this.handleKeyup());
-    on(this.element, 'submit', (event) => this.handleSubmit(event));
+    this.on('submit', (event) => this.handleSubmit(event));
     // this.on('submit', (event) => this.handleSubmit(event));
   }
 
@@ -33,9 +33,8 @@ export default class SerachFormView extends View {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(tag, 'handleSubmit', this.inputElement);
 
     const { value } = this.inputElement;
-    emit('@submit', { value });
+    this.emit('@submit', { value });
   }
 }
